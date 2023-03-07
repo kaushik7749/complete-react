@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;  /*this will take nav-items right side*/
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+
+}
+
+.nav-items > ul > li{
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+
+}
+
+.card {
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.card > img {
+    width: 100%;    /**It will resize the img to original card size **/
+
+}
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
