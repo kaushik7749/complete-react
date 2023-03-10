@@ -2,6 +2,7 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 function filterData(searchText, restaurants) {
@@ -36,10 +37,8 @@ const Body = () => {
 
 
    //when I don't I have my restaurant don't return anything(Early return)
-   if(!allRestaurants.length) return null;
-   
-   if(filteredRestaurants?.length === 0)
-   return <h1>No Restaurant match your filter!!</h1>;
+  
+   //if(!allRestaurants.length) return null;
 
     return allRestaurants.length === 0 ? (
         <Shimmer />
@@ -64,10 +63,13 @@ const Body = () => {
       <div className="restaurant-list">
           {
           filteredRestaurants.map((restaurant) => {
-            //I will show in my UI filtered restaurant
-              return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
-            })
-            }
+            //I will show in my UI filtered restaurant.
+            //Now we are mapping our key component to Link component
+            //-So, key which is present in RestaurantCard should be in our Link component.
+              return( <Link to={"/restaurant/" +restaurant.data.id} key={restaurant.data.id}> 
+              <RestaurantCard {...restaurant.data} /></Link>
+              );
+            })}
             
         </div>
         </>
