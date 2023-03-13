@@ -42,14 +42,14 @@ const Body = () => {
         <Shimmer />
     ) : (    
         <>
-            <div className="search-container">
-                <input type="text" className="search-input" placeholder="search" 
+            <div className="search-container p-5 bg-pink-50 my-5">
+                <input type="text" className="focus:bg-green-50" placeholder="search" 
                 value={searchText}
                 onChange = {(e) => {
                     setSearchText(e.target.value);
                 }}
                 />
-                <button className="search-btn" onClick={() => {
+                <button className="p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md" onClick={() => {
                     //I am searching the data from allRestaurants
                     const data = filterData(searchText, allRestaurants); 
                     //I want to update my filteredRestaurant on click of it.
@@ -58,7 +58,7 @@ const Body = () => {
                 }}>Search</button>
             </div>
 
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
           {
           filteredRestaurants.map((restaurant) => {
             //I will show in my UI filtered restaurant.
