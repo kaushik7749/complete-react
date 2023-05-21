@@ -27316,7 +27316,7 @@ const Header = ()=>{
     _s();
     const [isLoggedIn, setLoggedIn] = (0, _react.useState)(true);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50",
+        className: "flex justify-between bg-pink-50 shadow-lg",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/components/Header.js",

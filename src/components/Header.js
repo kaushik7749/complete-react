@@ -19,7 +19,7 @@ const Title = () => (
    const Header = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);
         return (
-        <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
+        <div className="flex justify-between bg-pink-50 shadow-lg">
              <Title />
            <div className="nav-items">
             <ul className="flex">

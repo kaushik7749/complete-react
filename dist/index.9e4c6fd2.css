@@ -248,10 +248,6 @@ img, video {
   width: 14rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -269,11 +265,6 @@ img, video {
   background-color: rgb(253 242 248 / var(--tw-bg-opacity));
 }
 
-.bg-purple-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 245 255 / var(--tw-bg-opacity));
-}
-
 .bg-purple-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(88 28 135 / var(--tw-bg-opacity));
@@ -285,11 +276,6 @@ img, video {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .px-2 {
