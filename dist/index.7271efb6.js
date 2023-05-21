@@ -32710,7 +32710,7 @@ var _helper = require("../utils/helper");
 var _useOnline = require("../utils/useOnline");
 var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
 var _s = $RefreshSig$();
-const Body = ()=>{
+const Body = (user)=>{
     _s();
     const [searchText, setSearchText] = (0, _react.useState)("");
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]); //keeping a copy of all resaurants

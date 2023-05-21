@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 
-const Body = () => {
+const Body = (user) => {
     const [searchText, setSearchText] = useState("");
     const [allRestaurants, setAllRestaurants] = useState([]); //keeping a copy of all resaurants
     const [filteredRestaurants, setFilteredRestaurants] = useState([]); //By default useState() should have dummy data i.e. restaurantList
