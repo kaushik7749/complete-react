@@ -584,110 +584,72 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$8238.prelude(module);
 
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$();
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _react = require("137859ca06e8210c");
+var _jsxRuntime = require("9a3f05484352423d");
 //we are passing isVisible and setIsVisible as prop in below section
 const Section = ({ title , description , isVisible , setIsVisible  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         className: "border border-black p-2 m-2",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
                 className: "font-bold text-xl",
                 children: title
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 11,
-                columnNumber: 9
-            }, undefined),
-            isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            }),
+            isVisible ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                 onClick: ()=>setIsVisible(!isVisible),
                 className: "cursor-pointer underline",
                 children: "Hide"
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 12,
-                columnNumber: 22
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            }) : /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                 onClick: ()=>setIsVisible(!isVisible),
                 className: "cursor-pointer underline",
                 children: "Show"
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 12,
-                columnNumber: 124
-            }, undefined),
-            isVisible && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+            }),
+            isVisible && /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
                 children: description
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 14,
-                columnNumber: 23
-            }, undefined)
+            })
         ]
-    }, void 0, true, {
-        fileName: "src/components/Instamart.js",
-        lineNumber: 10,
-        columnNumber: 10
-    }, undefined);
+    });
 };
 _c = Section;
 //Now here parent(InstaMart) has the control over 3 children Instamart state
 const Instamart = ()=>{
-    _s();
     const [visibleSection, setIsVisibleSection] = (0, _react.useState)("about");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                 className: "text-3xl p-2 font-bold",
                 children: "InstaMart"
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 22,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "About InstaMart",
                 description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
-                isVisible: visibleSection === "about",
-                setIsVisible: ()=>setIsVisibleSection("about")
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 23,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                isVisible: visibleSection === "about" //Now my parent has control over children
+                ,
+                setIsVisible: ()=>setIsVisibleSection("about") //Passing the about key
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "Team InstaMart",
                 description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
                 isVisible: visibleSection === "team",
                 setIsVisible: ()=>setIsVisibleSection("team")
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 27,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "Careers",
                 description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
                 isVisible: visibleSection === "career",
                 setIsVisible: ()=>setIsVisibleSection("career")
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 29,
-                columnNumber: 9
-            }, undefined)
+            })
         ]
-    }, void 0, true, {
-        fileName: "src/components/Instamart.js",
-        lineNumber: 21,
-        columnNumber: 10
-    }, undefined);
+    });
 };
-_s(Instamart, "ajCO6CrswkQ70T2Q1ztd8DrtaZU=");
 _c1 = Instamart;
-exports.default = Instamart;
+var _default = Instamart;
+exports.default = _default;
 var _c, _c1;
 $RefreshReg$(_c, "Section");
 $RefreshReg$(_c1, "Instamart");
@@ -697,6 +659,6 @@ $RefreshReg$(_c1, "Instamart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","2paN5"], null, "parcelRequire4df4")
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","137859ca06e8210c":"21dqq","9a3f05484352423d":"6AEwr"}]},["1xC6H","2paN5"], null, "parcelRequire4df4")
 
 //# sourceMappingURL=Instamart.0762395e.js.map

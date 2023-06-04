@@ -1,6 +1,6 @@
 const Shimmer = () => {
     return (
-        <div className="restaurant-list">
+        <div className="restaurant-list" data-tetid="shimmer">
             {/* we will create array and fill with 10 empty space and map it */}
             {Array(10).fill("").map((e, index)  => 
             (<div key={index} className="shimmer-card"></div>))}
