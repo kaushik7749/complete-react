@@ -1,15 +1,18 @@
-import { restaurantList } from "../constants";
-import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import RestaurantCard, { withPromtedLabel } from "./RestaurantCard";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { filterData } from "../utils/helper";
-import useOnline from "../utils/useOnline";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState([]); //keeping a copy of all resaurants
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]); //By default useState() should have dummy data i.e. restaurantList
+  const [listOfRestaurants, setListOfRestraunt] = useState([]); //keeping a copy of all resaurants
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]); //By default useState() should have dummy data i.e. restaurantList
+  const RestaurantCardPromoted = withPromtedLabel(RestaurantCard);
+
+  // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
 
   //1. empty dependency array => once after render
   //2. dep array[searchText] => once after initial render + everytime after
@@ -17,32 +20,42 @@ const Body = () => {
 
   useEffect(() => {
     //API call
-    getRestaurants();
+    fetchData();
   }, []);
 
-  async function getRestaurants() {
+  const fetchData = async () => {
     //when we do fetch it awaits 1st time and returns you the promise with readable stream.
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     //Now when we convert it to json, 2nd promise is returned here
     const json = await data.json();
     //optional chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); //rendering json data
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-  }
+    setListOfRestraunt(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ); //rendering json data
+    setFilteredRestaurant(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log(json);
+  };
 
-  const isOnline = useOnline();
+  const onlineStatus = useOnlineStatus();
 
-  if (!isOnline) {
-    return <h1>🔴Offline, please check your internet connection!!</h1>;
-  }
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you're offline!! Please check your internet connection;
+      </h1>
+    );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   //when I don't I have my restaurant don't return anything(Early return)
 
   //if(!allRestaurants.length) return null;
 
-  return allRestaurants.length === 0 ? (
+  return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -57,30 +70,59 @@ const Body = () => {
           }}
         />
         <button
-        data-testid="search-btn"
+          data-testid="search-btn"
           className="p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md"
           onClick={() => {
-            //I am searching the data from allRestaurants
-            const data = filterData(searchText, allRestaurants);
-            //I want to update my filteredRestaurant on click of it.
-            setFilteredRestaurants(data);
+            // Filter the restraunt cards and update the UI
+            // searchText
+            console.log(searchText);
+
+            const filteredRestaurant = listOfRestaurants.filter((res) =>
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            );
+
+            setFilteredRestaurant(filteredRestaurant);
           }}
         >
           Search
         </button>
       </div>
-
+      <div className="search m-4 p-4 flex items-center">
+        <button
+          className="px-4 py-2 bg-gray-100 rounded-lg"
+          onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4
+            );
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
+      <div className="search m-4 p-4 flex items-center">
+        <label>UserName : </label>
+        <input
+          className="border border-black p-2"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </div>
       <div className="flex flex-wrap">
-        {filteredRestaurants.map((restaurant) => {
+        {filteredRestaurant.map((restaurant) => {
           //I will show in my UI filtered restaurant.
           //Now we are mapping our key component to Link component
           //-So, key which is present in RestaurantCard should be in our Link component.
           return (
             <Link
-              to={"/restaurant/" + restaurant.data.id}
-              key={restaurant.data.id}
+              key={restaurant?.info.id}
+              to={"/restaurants/" + restaurant?.data?.id}
             >
-              <RestaurantCard {...restaurant.data} />
+              {restaurant?.info.promoted ? (
+                <RestaurantCardPromoted resData={restaurant?.info} />
+              ) : (
+                <RestaurantCard resData={restaurant?.info} />
+              )}
             </Link>
           );
         })}

@@ -1,67 +1,68 @@
 import { useState, useContext } from "react";
 import Logo from "../assets/img/FoodVilla.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 //Single page application
 
-
-
-
 const Title = () => (
-    // <a href"/": If we click our logo it wiil redirect us to home page
-        <a href="/">    
-        <img
-        data-testid="logo"
-        className="h-28 p-2"
-        alt="logo" src={Logo}/>
-        </a>
-    );
+  // <a href"/": If we click our logo it wiil redirect us to home page
+  <a href="/">
+    <img data-testid="logo" className="h-28 p-2" alt="logo" src={Logo} />
+  </a>
+);
 
-   const Header = () => {
-    const [isLoggedIn, setLoggedIn] = useState(true);
+const Header = () => {
+  const [btnNameReact, setBtnNameReact] = useState("Login");
 
-    const { user } = useContext(UserContext);
+  const onlineStatus = useOnlineStatus();
 
-    const cartItems = useSelector(store => store.cart.items);
+  const { loggedInUser } = useContext(UserContext);
+  //console.log(loggedInUser);
 
+  // Subscribing to the store using a Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  //console.log(cartItems);
 
-        return (
-        <div className="flex justify-between bg-pink-50 shadow-lg">
-             <Title />
-           <div className="nav-items">
-            <ul className="flex">
-                <li className="px-2">
-                <Link to="/">Home</Link>
-                </li>
-                <li className="px-2">
-                <Link to="/about">About</Link>
-                </li>
-                <li className="px-2">
-                <Link to="/contact">Contact</Link>
-                </li>
-                <li className="px-2">
-                <Link to="/instamart">Instamart</Link>
-                </li>
-                <Link to="/cart"><li className="px-2" data-testid="cart">Cart- {cartItems.length} items</li>
-                </Link>
-                
-            </ul>
-           </div>
+  return (
+    <div className="flex justify-between bg-pink-50 shadow-lg">
+      <Title />
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+          <li className="px-4">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="px-4">
+            <Link to="/about">About Us</Link>
+          </li>
+          <li className="px-4">
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li className="px-4">
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li className="px-4 font-bold text-xl">
+            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
+          </li>
+          <button
+            className="login"
+            onClick={() => {
+              btnNameReact === "Login"
+                ? setBtnNameReact("Logout")
+                : setBtnNameReact("Login");
+            }}
+          >
+            {btnNameReact}
+          </button>
 
-            <span className="p-10 font-bold text-red-900">{user.name}</span>
+          <li className="px-4 ">{loggedInUser}</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-           {
-            isLoggedIn ? (<button onClick={() => {  //We will toggle login and logout button
-                setLoggedIn(false);
-            }}>Logout</button>
-            ) : ( <button onClick={() => {
-                setLoggedIn(true);
-            }}>Login</button>
-          ) }
-        </div>
-        );
-    };
-    
-    export default Header;
+export default Header;
