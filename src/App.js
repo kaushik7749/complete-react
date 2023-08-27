@@ -11,6 +11,7 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Instamart from "./components/Instamart";
 
 /**
 Header
@@ -90,6 +91,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
       {
         path: "/restaurants/:resId",

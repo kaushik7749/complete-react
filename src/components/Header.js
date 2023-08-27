@@ -42,7 +42,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="px-4">
-            <Link to="/grocery">Grocery</Link>
+            <Link to="/instamart">Instamart</Link>
           </li>
           <li className="px-4 font-bold text-xl">
             <Link to="/cart">Cart - ({cartItems.length} items)</Link>
