@@ -163,13 +163,13 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"f017d21075070e6":"786KC","6dea6beaf86417cb":"1dldy"}],"4ns5B":[function(require,module,exports) {
+},{"f017d21075070e6":"786KC","6dea6beaf86417cb":"1dldy"}],"2T8U5":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "b097ecc884db8bad";
+module.bundle.HMR_BUNDLE_ID = "8af63753c52c2ad2";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -577,11 +577,11 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"2CCQ0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3b38 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
+$parcel$ReactRefreshHelpers$3b38.prelude(module);
 
 try {
 "use strict";
@@ -589,135 +589,26 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _reactRouterDom = require("28f41895ccf6c5d5");
-var _Profile = _interopRequireDefault(require("97a1c4d6b3cba419"));
-var _ProfileClass = _interopRequireDefault(require("f8bfb97c4b4b5193"));
-var _jsxRuntime = require("9b9308ad92fce26f");
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+var _jsxRuntime = require("505f6537ee5b9883");
+const Grocery = ()=>{
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h1", {
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                children: "About us page"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
-                children: "Learning React from scratch"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Profile.default, {
-                name: "Kaushik"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ProfileClass.default, {
-                name: "Kaushik Class"
-            })
+            " ",
+            "Our grocery online store, and we have a lot of child components inside this web page!!!"
         ]
     });
 };
-_c = About;
-var _default = About;
+_c = Grocery;
+var _default = Grocery;
 exports.default = _default;
 var _c;
-$RefreshReg$(_c, "About");
+$RefreshReg$(_c, "Grocery");
 
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
+  $parcel$ReactRefreshHelpers$3b38.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","28f41895ccf6c5d5":"9xmpe","97a1c4d6b3cba419":"h0rtF","f8bfb97c4b4b5193":"aeEz8","9b9308ad92fce26f":"6AEwr"}],"h0rtF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b52a.prelude(module);
+},{"505f6537ee5b9883":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","2T8U5"], null, "parcelRequire4df4")
 
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _react = require("10565127c8f83a12");
-var _jsxRuntime = require("7063fd74afe1b7bb");
-const Profile = (props)=>{
-    const [count] = (0, _react.useState)(0);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                children: "Profile Functional Component"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
-                children: [
-                    "Name: ",
-                    props.name
-                ]
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
-                children: [
-                    "Count: ",
-                    count
-                ]
-            })
-        ]
-    });
-};
-_c = Profile;
-var _default = Profile;
-exports.default = _default;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$b52a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"10565127c8f83a12":"21dqq","7063fd74afe1b7bb":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1beb.prelude(module);
-
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _react = _interopRequireDefault(require("71203b6f4e95ea20"));
-var _jsxRuntime = require("3a171c3d313f782d");
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-class Profile extends _react.default.Component {
-    render() {
-        return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                    children: "Profile Class Component"
-                }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h2", {
-                    children: [
-                        "Name: ",
-                        this.props.name
-                    ]
-                })
-            ]
-        });
-    }
-}
-var _default = Profile;
-exports.default = _default;
-
-  $parcel$ReactRefreshHelpers$1beb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"71203b6f4e95ea20":"21dqq","3a171c3d313f782d":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","4ns5B"], null, "parcelRequire4df4")
-
-//# sourceMappingURL=About.84db8bad.js.map
+//# sourceMappingURL=Grocery.c52c2ad2.js.map

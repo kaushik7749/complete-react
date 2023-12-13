@@ -2929,17 +2929,15 @@ var _react = _interopRequireWildcard(require("9550d0fa2aa5b9b2"));
 var _client = _interopRequireDefault(require("c4d33c163f4cac54"));
 var _Header = _interopRequireDefault(require("42c8a7d9876169f8"));
 var _Body = _interopRequireDefault(require("4761b9773aed5e"));
-var _Footer = _interopRequireDefault(require("234a7ffdff8729a4"));
-var _Error = _interopRequireDefault(require("2fba79d60bf12aa"));
 var _Contact = _interopRequireDefault(require("767e47f99e469ee4"));
+var _Error = _interopRequireDefault(require("2fba79d60bf12aa"));
 var _RestaurantMenu = _interopRequireDefault(require("96dcbd230c06ae71"));
-var _Profile = _interopRequireDefault(require("c1e9f66b0fe470fd"));
 var _reactRouterDom = require("8bb1c9d2f0021c26");
-var _Shimmer = _interopRequireDefault(require("38a2c99c31696a3b"));
 var _UserContext = _interopRequireDefault(require("b4839099b858a3e1"));
 var _reactRedux = require("82887a21dd5a4771");
-var _store = _interopRequireDefault(require("3bead7fbb491d748"));
+var _appStore = _interopRequireDefault(require("3dc8ba21b5894637"));
 var _Cart = _interopRequireDefault(require("109a77a1a630cdc1"));
+var _Instamart = _interopRequireDefault(require("d35db3a244e7c637"));
 var _jsxRuntime = require("7544edf5985f281e");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -2971,47 +2969,54 @@ function _interopRequireWildcard(obj, nodeInterop) {
     newObj.default = obj;
     if (cache) cache.set(obj, newObj);
     return newObj;
-} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Header
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -logo
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -nav items
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -cart
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Body 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -search bar
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -restaurant list
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -restaurant card
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -image
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -name
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -rating
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -cuisines
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Footer
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -links
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -copyrights
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */ 
+} //import About from "./components/About";
+/**
+Header
+      -logo
+      -nav items
+      -cart
+Body 
+      -search bar
+      -restaurant list
+        -restaurant card
+            -image
+            -name
+            -rating
+            -cuisines
+Footer
+      -links
+      -copyrights
+ * 
+ */ const Grocery = /*#__PURE__*/ (0, _react.lazy)(()=>Promise.resolve().then(function() {
+        return require("34875794c2d0c788");
+    }).then((res)=>_interopRequireWildcard(res)));
 const About = /*#__PURE__*/ (0, _react.lazy)(()=>Promise.resolve().then(function() {
         return require("70a3f95d60cdcd37");
     }).then((res)=>_interopRequireWildcard(res)));
-const Instamart = /*#__PURE__*/ (0, _react.lazy)(()=>Promise.resolve().then(function() {
-        return require("34009d47a2363357");
-    }).then((res)=>_interopRequireWildcard(res))); //promise
 const AppLayout = ()=>{
-    const [user, setUser] = (0, _react.useState)({
-        name: "Kaushik Yadure",
-        email: "kaushikyadure@gmail.com"
-    });
+    const [userName, setUserName] = (0, _react.useState)();
+    //authentication
+    (0, _react.useEffect)(()=>{
+        // Make an API call and send username and password
+        const data = {
+            name: "Kaushik yadure"
+        };
+        setUserName(data.name);
+    }, []);
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRedux.Provider, {
-        store: _store.default,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_UserContext.default.Provider, {
+        store: _appStore.default,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_UserContext.default.Provider, {
             value: {
-                user: user,
-                setUser: setUser
+                loggedInUser: userName,
+                setUserName
             },
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Header.default, {}),
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Outlet, {}),
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Footer.default, {})
-            ]
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "app",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Header.default, {}),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Outlet, {})
+                ]
+            })
         })
     });
 };
@@ -3023,46 +3028,47 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(AppLayout, {}),
-        errorElement: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Error.default, {}),
         children: [
-            {
-                path: "/about",
-                //In url I am loading element About which came from About.js comp
-                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_react.Suspense, {
-                    fallback: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {}),
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(About, {})
-                }),
-                children: [
-                    {
-                        path: "profile",
-                        element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Profile.default, {})
-                    }
-                ]
-            },
             {
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Body.default, {})
+            },
+            {
+                path: "/about",
+                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_react.Suspense, {
+                    fallback: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        children: "Loading...."
+                    }),
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(About, {})
+                })
             },
             {
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Contact.default, {})
             },
             {
-                path: "/restaurant/:resId",
-                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantMenu.default, {})
+                path: "/grocery",
+                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_react.Suspense, {
+                    fallback: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        children: "Loading...."
+                    }),
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Grocery, {})
+                })
             },
             {
                 path: "/instamart",
-                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_react.Suspense, {
-                    fallback: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {}),
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Instamart, {})
-                })
+                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Instamart.default, {})
+            },
+            {
+                path: "/restaurants/:resId",
+                element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantMenu.default, {})
             },
             {
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Cart.default, {})
             }
-        ]
+        ],
+        errorElement: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Error.default, {})
     }
 ]);
 const root = _client.default.createRoot(document.getElementById("root"));
@@ -3077,7 +3083,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","70a3f95d60cdcd37":"6jcNq","34009d47a2363357":"3IbrY","9550d0fa2aa5b9b2":"21dqq","c4d33c163f4cac54":"lOjBx","42c8a7d9876169f8":"hsJbF","4761b9773aed5e":"8yaV8","234a7ffdff8729a4":"8pPOA","2fba79d60bf12aa":"kvula","767e47f99e469ee4":"cgAOG","96dcbd230c06ae71":"8PuJ6","c1e9f66b0fe470fd":"h0rtF","8bb1c9d2f0021c26":"9xmpe","38a2c99c31696a3b":"g6ZGj","b4839099b858a3e1":"c5vgB","82887a21dd5a4771":"bdVon","3bead7fbb491d748":"k2jPV","109a77a1a630cdc1":"h8J3U","7544edf5985f281e":"6AEwr"}],"km3Ru":[function(require,module,exports) {
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","70a3f95d60cdcd37":"6jcNq","9550d0fa2aa5b9b2":"21dqq","c4d33c163f4cac54":"lOjBx","42c8a7d9876169f8":"hsJbF","4761b9773aed5e":"8yaV8","767e47f99e469ee4":"cgAOG","2fba79d60bf12aa":"kvula","96dcbd230c06ae71":"8PuJ6","8bb1c9d2f0021c26":"9xmpe","b4839099b858a3e1":"c5vgB","82887a21dd5a4771":"bdVon","3dc8ba21b5894637":"6A5Ux","109a77a1a630cdc1":"h8J3U","7544edf5985f281e":"6AEwr","34875794c2d0c788":"e2h3k","d35db3a244e7c637":"gB4Fs"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("5a71edb7b14beee7");
 function debounce(func, delay) {
@@ -3312,13 +3318,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"3IbrY":[function(require,module,exports) {
-module.exports = require("351405788aa95915")(require("50824ef5802df39f").getBundleURL("aXMci") + "Instamart.0762395e.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("gB4Fs"));
-
-},{"351405788aa95915":"61B45","50824ef5802df39f":"lgJ39"}],"21dqq":[function(require,module,exports) {
+},{}],"21dqq":[function(require,module,exports) {
 "use strict";
 module.exports = require("fafe6e342a088b75");
 
@@ -26683,6 +26683,7 @@ exports.default = void 0;
 var _react = require("d812453fbae72c75");
 var _FoodVilla = _interopRequireDefault(require("8145c1bd1d219c00"));
 var _reactRouterDom = require("f378d711496f76cf");
+var _useOnlineStatus = _interopRequireDefault(require("e78e4624269c03af"));
 var _UserContext = _interopRequireDefault(require("445db41343e3e7cc"));
 var _reactRedux = require("e57406c6228df77");
 var _jsxRuntime = require("bea344dc2bb7fff1");
@@ -26704,76 +26705,81 @@ const Title = ()=>/*#__PURE__*/ // <a href"/": If we click our logo it wiil redi
     });
 _c = Title;
 const Header = ()=>{
-    const [isLoggedIn, setLoggedIn] = (0, _react.useState)(true);
-    const { user  } = (0, _react.useContext)(_UserContext.default);
+    const [btnNameReact, setBtnNameReact] = (0, _react.useState)("Login");
+    const onlineStatus = (0, _useOnlineStatus.default)();
+    const { loggedInUser  } = (0, _react.useContext)(_UserContext.default);
+    //console.log(loggedInUser);
+    // Subscribing to the store using a Selector
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    //console.log(cartItems);
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         className: "flex justify-between bg-pink-50 shadow-lg",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)(Title, {}),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "nav-items",
+                className: "flex items-center",
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
-                    className: "flex",
+                    className: "flex p-4 m-4",
                     children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
+                            className: "px-4",
+                            children: [
+                                "Online Status: ",
+                                onlineStatus ? "✅" : "\uD83D\uDD34"
+                            ]
+                        }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            className: "px-2",
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                 to: "/",
                                 children: "Home"
                             })
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            className: "px-2",
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                 to: "/about",
-                                children: "About"
+                                children: "About Us"
                             })
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            className: "px-2",
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                 to: "/contact",
-                                children: "Contact"
+                                children: "Contact Us"
                             })
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            className: "px-2",
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                 to: "/instamart",
                                 children: "Instamart"
                             })
                         }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
-                            to: "/cart",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
-                                className: "px-2",
-                                "data-testid": "cart",
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                            className: "px-4 font-bold text-xl",
+                            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
+                                to: "/cart",
                                 children: [
-                                    "Cart- ",
+                                    "Cart - (",
                                     cartItems.length,
-                                    " items"
+                                    " items)"
                                 ]
                             })
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                            className: "login",
+                            onClick: ()=>{
+                                btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
+                            },
+                            children: btnNameReact
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                            className: "px-4 ",
+                            children: loggedInUser
                         })
                     ]
                 })
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
-                className: "p-10 font-bold text-red-900",
-                children: user.name
-            }),
-            isLoggedIn ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                onClick: ()=>{
-                    //We will toggle login and logout button
-                    setLoggedIn(false);
-                },
-                children: "Logout"
-            }) : /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                onClick: ()=>{
-                    setLoggedIn(true);
-                },
-                children: "Login"
             })
         ]
     });
@@ -26790,7 +26796,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"d812453fbae72c75":"21dqq","8145c1bd1d219c00":"6nv0H","f378d711496f76cf":"9xmpe","445db41343e3e7cc":"c5vgB","e57406c6228df77":"bdVon","bea344dc2bb7fff1":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6nv0H":[function(require,module,exports) {
+},{"d812453fbae72c75":"21dqq","8145c1bd1d219c00":"6nv0H","f378d711496f76cf":"9xmpe","e78e4624269c03af":"181Ji","445db41343e3e7cc":"c5vgB","e57406c6228df77":"bdVon","bea344dc2bb7fff1":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6nv0H":[function(require,module,exports) {
 module.exports = require("9501dec9435f8f62").getBundleURL("aXMci") + "FoodVilla.6c1f82da.png" + "?" + Date.now();
 
 },{"9501dec9435f8f62":"lgJ39"}],"9xmpe":[function(require,module,exports) {
@@ -31867,7 +31873,42 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"c5vgB":[function(require,module,exports) {
+},{}],"181Ji":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a38f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a38f.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _react = require("be64a43945cdb711");
+const useOnlineStatus = ()=>{
+    const [onlineStatus, setOnlineStatus] = (0, _react.useState)(true);
+    //let's write logic for online and offline
+    (0, _react.useEffect)(()=>{
+        window.addEventListener("offline", ()=>{
+            setOnlineStatus(false);
+        });
+        window.addEventListener("online", ()=>{
+            setOnlineStatus(true);
+        });
+    }, []);
+    // boolean value
+    return onlineStatus;
+};
+var _default = useOnlineStatus;
+exports.default = _default;
+
+  $parcel$ReactRefreshHelpers$a38f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"be64a43945cdb711":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"c5vgB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4ca8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31881,10 +31922,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = require("f85af04b796fb609");
 const UserContext = /*#__PURE__*/ (0, _react.createContext)({
-    user: {
-        name: "Dummy Name",
-        email: "dummy@gmail.com"
-    }
+    loggedInUser: "Default User"
 });
 var _default = UserContext;
 exports.default = _default;
@@ -34519,46 +34557,75 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _constants = require("261119f573ff0b9d");
-var _RestaurantCard = _interopRequireDefault(require("2478099b2be72a8e"));
+var _RestaurantCard = _interopRequireWildcard(require("2478099b2be72a8e"));
 var _react = require("8a1d648d27dc0800");
 var _Shimmer = _interopRequireDefault(require("306f4043ae5cc0e"));
 var _reactRouterDom = require("2bbb06f1536ff202");
-var _helper = require("cff18cf48d3ea611");
-var _useOnline = _interopRequireDefault(require("186ebab1d1f1cb58"));
+var _useOnlineStatus = _interopRequireDefault(require("7b7246b3e233716a"));
+var _UserContext = _interopRequireDefault(require("3a5a627e268cdd92"));
 var _jsxRuntime = require("d03d7976804b5dc7");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         default: obj
     };
 }
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
 const Body = ()=>{
     const [searchText, setSearchText] = (0, _react.useState)("");
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]); //keeping a copy of all resaurants
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]); //By default useState() should have dummy data i.e. restaurantList
+    const [listOfRestaurants, setListOfRestraunt] = (0, _react.useState)([]); //keeping a copy of all resaurants
+    const [filteredRestaurant, setFilteredRestaurant] = (0, _react.useState)([]); //By default useState() should have dummy data i.e. restaurantList
+    const RestaurantCardPromoted = (0, _RestaurantCard.withPromtedLabel)(_RestaurantCard.default);
+    // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
     //1. empty dependency array => once after render
     //2. dep array[searchText] => once after initial render + everytime after
     //-(my searchText changes).
     (0, _react.useEffect)(()=>{
         //API call
-        getRestaurants();
+        fetchData();
     }, []);
-    async function getRestaurants() {
+    const fetchData = async ()=>{
         //when we do fetch it awaits 1st time and returns you the promise with readable stream.
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
         //Now when we convert it to json, 2nd promise is returned here
         const json = await data.json();
         //optional chaining
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards); //rendering json data
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
-    const isOnline = (0, _useOnline.default)();
-    if (!isOnline) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-        children: "\uD83D\uDD34Offline, please check your internet connection!!"
+        setListOfRestraunt(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants); //rendering json data
+        setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(json);
+    };
+    const onlineStatus = (0, _useOnlineStatus.default)();
+    if (onlineStatus === false) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+        children: "Looks like you're offline!! Please check your internet connection;"
     });
+    const { loggedInUser , setUserName  } = (0, _react.useContext)(_UserContext.default);
     //when I don't I have my restaurant don't return anything(Early return)
     //if(!allRestaurants.length) return null;
-    return allRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {}) : /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return listOfRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {}) : /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                 className: "search-container p-5 bg-pink-50 my-5",
@@ -34576,27 +34643,54 @@ const Body = ()=>{
                         "data-testid": "search-btn",
                         className: "p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md",
                         onClick: ()=>{
-                            //I am searching the data from allRestaurants
-                            const data = (0, _helper.filterData)(searchText, allRestaurants);
-                            //I want to update my filteredRestaurant on click of it.
-                            setFilteredRestaurants(data);
+                            // Filter the restraunt cards and update the UI
+                            // searchText
+                            console.log(searchText);
+                            const filteredRestaurant = listOfRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                            setFilteredRestaurant(filteredRestaurant);
                         },
                         children: "Search"
                     })
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "search m-4 p-4 flex items-center",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                    className: "px-4 py-2 bg-gray-100 rounded-lg",
+                    onClick: ()=>{
+                        const filteredList = listOfRestaurants.filter((res)=>res.info.avgRating > 4);
+                        setFilteredRestaurant(filteredList);
+                    },
+                    children: "Top Rated Restaurants"
+                })
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "search m-4 p-4 flex items-center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+                        children: "UserName : "
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        className: "border border-black p-2",
+                        value: loggedInUser,
+                        onChange: (e)=>setUserName(e.target.value)
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "flex flex-wrap",
-                children: filteredRestaurants.map((restaurant)=>{
+                children: filteredRestaurant.map((restaurant)=>{
                     //I will show in my UI filtered restaurant.
                     //Now we are mapping our key component to Link component
                     //-So, key which is present in RestaurantCard should be in our Link component.
                     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
-                        to: "/restaurant/" + restaurant.data.id,
-                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
-                            ...restaurant.data
+                        to: "/restaurants/" + restaurant?.data?.id,
+                        children: restaurant?.info.promoted ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(RestaurantCardPromoted, {
+                            resData: restaurant?.info
+                        }) : /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
+                            resData: restaurant?.info
                         })
-                    }, restaurant.data.id);
+                    }, restaurant?.info.id);
                 })
             })
         ]
@@ -34613,771 +34707,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"261119f573ff0b9d":"3huJa","2478099b2be72a8e":"bMboU","8a1d648d27dc0800":"21dqq","306f4043ae5cc0e":"g6ZGj","2bbb06f1536ff202":"9xmpe","cff18cf48d3ea611":"3GF3D","186ebab1d1f1cb58":"74Yls","d03d7976804b5dc7":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3huJa":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.restaurantList = exports.IMG_CDN_URL = exports.FETCH_MENU_URL = void 0;
-const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-exports.IMG_CDN_URL = IMG_CDN_URL;
-const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=15.882637&lng=74.5180505&restaurantId=";
-// https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=
-exports.FETCH_MENU_URL = FETCH_MENU_URL;
-const restaurantList = [
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "657142",
-            name: "Punjabi Angithi (Delhi Wale)",
-            uuid: "269728de-0f94-4ea2-a78a-63f28ff53347",
-            city: "22",
-            area: "Hathibarkala",
-            totalRatingsString: "500+ ratings",
-            cloudinaryImageId: "0a59d45ca92d85e5f63f5bc79f3dbb33",
-            cuisines: [
-                "North Indian",
-                "Chinese",
-                "Punjabi",
-                "Kebabs",
-                "Tandoor"
-            ],
-            tags: [],
-            costForTwo: 40000,
-            costForTwoString: "₹400 FOR TWO",
-            deliveryTime: 37,
-            minDeliveryTime: 37,
-            maxDeliveryTime: 37,
-            slaString: "37 MINS",
-            lastMileTravel: 4.400000095367432,
-            slugs: {
-                restaurant: "punjabi-angithi-hathibarkala-hathibarkala",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "VEGORAMA PUNJABI ANGITHI PVT LTD PARSVNATH ELEGANZA MALL 103, RAJPUR  ROAD DEHRADUN, Dehradun,  Uttarakhand-248009",
-            locality: "Rajpur Road",
-            parentId: 4464,
-            unserviceable: false,
-            veg: true,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "60% off",
-                shortDescriptionList: [
-                    {
-                        meta: "60% off | Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "60% off up to ₹120 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "60% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "60% off up to ₹120 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            ribbon: [
-                {
-                    type: "PROMOTED"
-                }
-            ],
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "cid=6055004~p=1~eid=00000186-bff4-0dcc-02c0-e12d0081014a",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "4.4 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "657142",
-                deliveryTime: 37,
-                minDeliveryTime: 37,
-                maxDeliveryTime: 37,
-                lastMileTravel: 4.400000095367432,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: true,
-            avgRating: "4.0",
-            totalRatings: 500,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "584793",
-            name: "Ginger n Garlic",
-            uuid: "43d0c0da-ad0f-489c-bff0-2ad24d4907d4",
-            city: "22",
-            area: "Patel Nagar",
-            totalRatingsString: "100+ ratings",
-            cloudinaryImageId: "q3r0vr5kong9mw4d8ysg",
-            cuisines: [
-                "North Indian",
-                "Chinese",
-                "Thalis"
-            ],
-            tags: [],
-            costForTwo: 20000,
-            costForTwoString: "₹200 FOR TWO",
-            deliveryTime: 30,
-            minDeliveryTime: 30,
-            maxDeliveryTime: 30,
-            slaString: "30 MINS",
-            lastMileTravel: 0.8999999761581421,
-            slugs: {
-                restaurant: "nath's-restaurant-by-nath's-chinese-hathibarkala-hathibarkala",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "278, Lakhi Bagh, Dehradun",
-            locality: "Arhat Bazaar",
-            parentId: 349995,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "FREE DELIVERY",
-                shortDescriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "",
-                shortDescriptionList: [
-                    {
-                        meta: "Free Delivery",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "0.8 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "584793",
-                deliveryTime: 30,
-                minDeliveryTime: 30,
-                maxDeliveryTime: 30,
-                lastMileTravel: 0.8999999761581421,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "4.0",
-            totalRatings: 100,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "408193",
-            name: "Le Amritam Dine & Mime",
-            uuid: "c0e98186-8949-4109-83fa-01a571b7294a",
-            city: "22",
-            area: "Kaonli",
-            totalRatingsString: "Too Few Ratings",
-            cloudinaryImageId: "taro6ninxoe2svpcy9ou",
-            cuisines: [
-                "Chinese",
-                "Indian"
-            ],
-            tags: [],
-            costForTwo: 120000,
-            costForTwoString: "₹1200 FOR TWO",
-            deliveryTime: 35,
-            minDeliveryTime: 35,
-            maxDeliveryTime: 35,
-            slaString: "35 MINS",
-            lastMileTravel: 1.399999976158142,
-            slugs: {
-                restaurant: "dine-and-mime-patel-nagar-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "Siddhartha Palace, 56, Saharanpur Rd, Lakkhi Bagh, Dehradun, Uttarakhand 248001, India",
-            locality: "Saharanpur Road",
-            parentId: 315398,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "FREE DELIVERY",
-                shortDescriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "",
-                shortDescriptionList: [
-                    {
-                        meta: "Free Delivery",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "1.3 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "408193",
-                deliveryTime: 35,
-                minDeliveryTime: 35,
-                maxDeliveryTime: 35,
-                lastMileTravel: 1.399999976158142,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "--",
-            totalRatings: 0,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "408505",
-            name: "KFC",
-            uuid: "0dd1e681-54d2-458e-8b24-52cc995ce165",
-            city: "22",
-            area: "Morowala",
-            totalRatingsString: "1000+ ratings",
-            cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-            cuisines: [
-                "Burgers",
-                "Biryani",
-                "American",
-                "Snacks",
-                "Fast Food"
-            ],
-            tags: [],
-            costForTwo: 40000,
-            costForTwoString: "₹400 FOR TWO",
-            deliveryTime: 33,
-            minDeliveryTime: 33,
-            maxDeliveryTime: 33,
-            slaString: "33 MINS",
-            lastMileTravel: 4.099999904632568,
-            slugs: {
-                restaurant: "kfc-khasara-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "KFC  Ground Floor,Khasara No 544,545,Mauza-Niranjanpur,Paragana,Central Doon.District Dehradun- 24817",
-            locality: "Sewla Kalan",
-            parentId: 547,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "FREE DELIVERY",
-                shortDescriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "",
-                shortDescriptionList: [
-                    {
-                        meta: "Free Delivery",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "FREE DELIVERY",
-                        discountType: "FREE_DELIVERY",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            ribbon: [
-                {
-                    type: "PROMOTED"
-                }
-            ],
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "cid=6149178~p=4~eid=00000186-bff4-0dcc-02c0-e12e00810442",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "4 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "408505",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                lastMileTravel: 4.099999904632568,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: true,
-            avgRating: "4.1",
-            totalRatings: 1000,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "508155",
-            name: "Punjab Rasoi",
-            uuid: "71011ae0-aef6-432e-ba70-b324f7e79991",
-            city: "22",
-            area: "Laxman Chowk",
-            totalRatingsString: "100+ ratings",
-            cloudinaryImageId: "cu3nrjfpzql1zzpf09uj",
-            cuisines: [
-                "North Indian",
-                "Punjabi"
-            ],
-            tags: [],
-            costForTwo: 10000,
-            costForTwoString: "₹100 FOR TWO",
-            deliveryTime: 28,
-            minDeliveryTime: 28,
-            maxDeliveryTime: 28,
-            slaString: "28 MINS",
-            lastMileTravel: 1.899999976158142,
-            slugs: {
-                restaurant: "punjab-rasoi-patel-nagar-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "206/213-100  Guru Rd,laxman chowk ,  Dehradun, Uttarakhand 248001, India",
-            locality: "Guru Road",
-            parentId: 162041,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "20% off",
-                shortDescriptionList: [
-                    {
-                        meta: "20% off | Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "20% off up to ₹50 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "20% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "20% off up to ₹50 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "1.8 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "508155",
-                deliveryTime: 28,
-                minDeliveryTime: 28,
-                maxDeliveryTime: 28,
-                lastMileTravel: 1.899999976158142,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "4.1",
-            totalRatings: 100,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "342482",
-            name: "BOBBY PUNJABI KITCHEN",
-            uuid: "2998e915-bad1-44e5-8ebd-c44f9dcb4302",
-            city: "22",
-            area: "Laxman Chowk",
-            totalRatingsString: "100+ ratings",
-            cloudinaryImageId: "a9e9da596e7e738dc02f18a9b3c5146b",
-            cuisines: [
-                "Punjabi",
-                "North Indian"
-            ],
-            tags: [],
-            costForTwo: 20000,
-            costForTwoString: "₹200 FOR TWO",
-            deliveryTime: 28,
-            minDeliveryTime: 28,
-            maxDeliveryTime: 28,
-            slaString: "28 MINS",
-            lastMileTravel: 1.899999976158142,
-            slugs: {
-                restaurant: "bobby-punjabi-kitchen-patel-nagar-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "206/213, Guru Rd, Dehradun, Uttarakhand 248001, India",
-            locality: "Guru Road",
-            parentId: 48299,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "20% off",
-                shortDescriptionList: [
-                    {
-                        meta: "20% off | Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "20% off up to ₹50 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "20% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "20% off up to ₹50 | Use code TRYNEW",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "1.8 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "342482",
-                deliveryTime: 28,
-                minDeliveryTime: 28,
-                maxDeliveryTime: 28,
-                lastMileTravel: 1.899999976158142,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "3.8",
-            totalRatings: 100,
-            new: false
-        },
-        subtype: "basic"
-    }
-];
-exports.restaurantList = restaurantList;
-
-},{}],"bMboU":[function(require,module,exports) {
+},{"2478099b2be72a8e":"bMboU","8a1d648d27dc0800":"21dqq","306f4043ae5cc0e":"g6ZGj","2bbb06f1536ff202":"9xmpe","7b7246b3e233716a":"181Ji","3a5a627e268cdd92":"c5vgB","d03d7976804b5dc7":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35388,9 +34718,9 @@ try {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = void 0;
-var _constants = require("cba5be0a1c1dea09");
+exports.withPromtedLabel = exports.default = void 0;
 var _react = require("a6b9fe6179f60d28");
+var _constants = require("b0b83f987620fa68");
 var _UserContext = _interopRequireDefault(require("2ab97d5d271a7683"));
 var _jsxRuntime = require("dfeb86b9064e714");
 function _interopRequireDefault(obj) {
@@ -35398,39 +34728,74 @@ function _interopRequireDefault(obj) {
         default: obj
     };
 }
-const RestaurantCard = ({ name , cuisines , cloudinaryImageId , totalRatingsString  })=>{
-    const { user  } = (0, _react.useContext)(_UserContext.default);
+const RestaurantCard = (props)=>{
+    const { resData  } = props;
+    const { loggedInUser  } = (0, _react.useContext)(_UserContext.default);
+    const { cloudinaryImageId , name , avgRating , cuisines , costForTwo , deliveryTime  } = resData;
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
+        "data-testid": "resCard",
+        className: "m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                src: _constants.IMG_CDN_URL + cloudinaryImageId
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                className: "font-bold test-xl",
-                children: name
+                className: "rounded-lg",
+                alt: "res-logo",
+                src: _constants.CDN_URL + cloudinaryImageId
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                className: "font-bold py-4 text-lg",
+                children: name
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
                 children: cuisines.join(", ")
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
                 children: [
-                    totalRatingsString,
+                    avgRating,
                     " stars"
                 ]
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h5", {
-                className: "font-bold",
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
                 children: [
-                    user.name,
-                    " - ",
-                    user.email
+                    "₹",
+                    costForTwo / 100,
+                    " FOR TWO"
+                ]
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
+                children: [
+                    deliveryTime,
+                    " minutes"
+                ]
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
+                children: [
+                    "User : ",
+                    loggedInUser,
+                    " "
                 ]
             })
         ]
     });
 };
 _c = RestaurantCard;
+// Higher Order Component
+// input - RestaurantCard =>> RestaurantCardPromoted
+const withPromtedLabel = (RestaurantCard)=>{
+    return (props)=>{
+        return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+                    className: "absolute bg-black text-white m-2 p-2 rounded-lg",
+                    children: "Promoted"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)(RestaurantCard, {
+                    ...props
+                })
+            ]
+        });
+    };
+};
+exports.withPromtedLabel = withPromtedLabel;
 var _default = RestaurantCard;
 exports.default = _default;
 var _c;
@@ -35441,7 +34806,20 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"cba5be0a1c1dea09":"3huJa","a6b9fe6179f60d28":"21dqq","2ab97d5d271a7683":"c5vgB","dfeb86b9064e714":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+},{"a6b9fe6179f60d28":"21dqq","b0b83f987620fa68":"hB8jg","2ab97d5d271a7683":"c5vgB","dfeb86b9064e714":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hB8jg":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MENU_API = exports.LOGO_URL = exports.CDN_URL = void 0;
+const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+exports.CDN_URL = CDN_URL;
+const LOGO_URL = "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
+exports.LOGO_URL = LOGO_URL;
+const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.8996676&lng=77.4826837&restaurantId=405178&catalog_qa=undefined&submitAction=ENTER";
+exports.MENU_API = MENU_API;
+
+},{}],"g6ZGj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35455,12 +34833,64 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _jsxRuntime = require("98c0b1cd62a01f7d");
 const Shimmer = ()=>{
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "restaurant-list",
-        "data-tetid": "shimmer",
-        children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+        className: "shimmer-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "shimmer-card"
-            }, index))
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "shimmer-card"
+            })
+        ]
     });
 };
 _c = Shimmer;
@@ -35474,22 +34904,11 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"98c0b1cd62a01f7d":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.filterData = filterData;
-function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterData;
-}
-
-},{}],"74Yls":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"98c0b1cd62a01f7d":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$03b2.prelude(module);
+$parcel$ReactRefreshHelpers$ee46.prelude(module);
 
 try {
 "use strict";
@@ -35497,78 +34916,47 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _react = require("16791e4dccb05b1b");
-const useOnline = ()=>{
-    const [isOnline, setIsOnline] = (0, _react.useState)(true);
-    //let's write logic for online and offline
-    (0, _react.useEffect)(()=>{
-        const handleOnline = ()=>{
-            setIsOnline(true);
-        };
-        const handleOffline = ()=>{
-            setIsOnline(false);
-        };
-        window.addEventListener("online", handleOnline);
-        window.addEventListener("offline", handleOffline);
-        return ()=>{
-            window.removeEventListener("online", handleOnline);
-            window.removeEventListener("offline", handleOffline);
-        };
-    }, []);
-    return isOnline; //returns true or false
-};
-var _default = useOnline;
-exports.default = _default;
-
-  $parcel$ReactRefreshHelpers$03b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"16791e4dccb05b1b":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc7c.prelude(module);
-
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _react = require("d5ada1e9dcf884a9");
-var _UserContext = _interopRequireDefault(require("35be0642404bb509"));
-var _jsxRuntime = require("7a876be574494607");
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const Footer = ()=>{
-    const { user  } = (0, _react.useContext)(_UserContext.default);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
-        className: "p-10 m-10",
+var _jsxRuntime = require("8679a0e1503c622a");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         children: [
-            "This site is developed by ",
-            user.name,
-            " - ",
-            user.email
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                className: "font-bold text-3xl p-4 m-4",
+                children: "Contact Us Page"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "text",
+                        className: " border border-black p-2 m-2",
+                        placeholder: "name"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "text",
+                        className: " border border-black p-2 m-2",
+                        placeholder: "message"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: " border border-black p-2 m-2 bg-gray-100 rounded-lg",
+                        children: "Submit"
+                    })
+                ]
+            })
         ]
     });
 };
-_c = Footer;
-var _default = Footer;
+_c = Contact;
+var _default = Contact;
 exports.default = _default;
 var _c;
-$RefreshReg$(_c, "Footer");
+$RefreshReg$(_c, "Contact");
 
-  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
+  $parcel$ReactRefreshHelpers$ee46.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"d5ada1e9dcf884a9":"21dqq","35be0642404bb509":"c5vgB","7a876be574494607":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+},{"8679a0e1503c622a":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35609,36 +34997,7 @@ $RefreshReg$(_c, "Error");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"6132dc5a2c90fb82":"9xmpe","57801408bf6f0a4a":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ee46.prelude(module);
-
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _jsxRuntime = require("8679a0e1503c622a");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-        children: "Contact Us Page"
-    });
-};
-_c = Contact;
-var _default = Contact;
-exports.default = _default;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$ee46.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"8679a0e1503c622a":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
+},{"6132dc5a2c90fb82":"9xmpe","57801408bf6f0a4a":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35650,13 +35009,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _react = require("772aea192bd31a1a");
-var _reactRouterDom = require("65cd4571f028c9b2");
 var _Shimmer = _interopRequireDefault(require("c69eba60b6c39bd3"));
-var _constants = require("2ec5ea342d4c35dc");
-var _useRestaurant = _interopRequireDefault(require("b87f069f32258a00"));
-var _cartSlice = require("ea13e5764f88e043");
-var _reactRedux = require("34e192208c46d877");
+var _reactRouterDom = require("65cd4571f028c9b2");
+var _useRestaurantMenu = _interopRequireDefault(require("d70faccb7ccb93e1"));
+var _RestaurantCategory = _interopRequireDefault(require("36704a88a16b6dcc"));
+var _react = require("772aea192bd31a1a");
 var _jsxRuntime = require("92f859f5a65dd3f4");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -35664,68 +35021,38 @@ function _interopRequireDefault(obj) {
     };
 }
 const RestaurantMenu = ()=>{
-    //how to read a dynamic url params
     const { resId  } = (0, _reactRouterDom.useParams)();
-    const restaurant = (0, _useRestaurant.default)(resId);
-    const dispatch = (0, _reactRedux.useDispatch)();
-    const addFoodItem = (item)=>{
-        dispatch((0, _cartSlice.addItem)(item));
-    };
-    return !restaurant ? /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {}) : /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        className: "flex",
+    console.log(resId);
+    const dummy = "Dummy Data";
+    const resInfo = (0, _useRestaurantMenu.default)(resId);
+    const [showIndex, setShowIndex] = (0, _react.useState)(null);
+    if (resInfo === null) return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Shimmer.default, {});
+    const { name , cuisines , costForTwoMessage  } = resInfo?.cards[0]?.card?.card?.info || {};
+    const { itemCards  } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {};
+    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    //console.log(categories);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+        className: "text-center",
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                className: "font-bold my-6 text-2xl",
+                children: name
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("p", {
+                className: "font-bold text-lg",
                 children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h1", {
-                        children: [
-                            "Restaurant id: ",
-                            resId
-                        ]
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                        children: restaurant?.name
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                        src: _constants.IMG_CDN_URL + restaurant?.cloudinaryImageId
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                        children: restaurant?.area
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                        children: restaurant?.city
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
-                        children: [
-                            restaurant?.avgRating,
-                            " stars"
-                        ]
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                        children: restaurant?.costForTwoMsg
-                    })
+                    cuisines?.join(", "),
+                    " - ",
+                    costForTwoMessage
                 ]
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                className: "p-5",
-                children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                        children: "Menu"
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
-                        children: Object.values(restaurant?.menu?.items).map((item)=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
-                                children: [
-                                    item.name,
-                                    " - ",
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "p-1 bg-green-50",
-                                        onClick: ()=>addFoodItem(item),
-                                        children: "Add"
-                                    })
-                                ]
-                            }, item.id))
-                    })
-                ]
-            })
+            categories?.map((category, index)=>/*#__PURE__*/ // controlled component
+                (0, _jsxRuntime.jsx)(_RestaurantCategory.default, {
+                    data: category?.card?.card,
+                    showItems: index === showIndex ? true : false,
+                    setShowIndex: ()=>setShowIndex(index),
+                    dummy: dummy
+                }, category?.card?.card.title))
         ]
     });
 };
@@ -35740,11 +35067,11 @@ $RefreshReg$(_c, "RestaurantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"772aea192bd31a1a":"21dqq","65cd4571f028c9b2":"9xmpe","c69eba60b6c39bd3":"g6ZGj","2ec5ea342d4c35dc":"3huJa","b87f069f32258a00":"ewgpj","ea13e5764f88e043":"5RXlr","34e192208c46d877":"bdVon","92f859f5a65dd3f4":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ewgpj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5009 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"65cd4571f028c9b2":"9xmpe","c69eba60b6c39bd3":"g6ZGj","d70faccb7ccb93e1":"fMOkH","36704a88a16b6dcc":"K7XHe","772aea192bd31a1a":"21dqq","92f859f5a65dd3f4":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fMOkH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$253c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5009.prelude(module);
+$parcel$ReactRefreshHelpers$253c.prelude(module);
 
 try {
 "use strict";
@@ -35752,31 +35079,178 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _react = require("8fa7a999535c6f86");
-var _constants = require("53890a9a7bacb4e5");
-const useRestaurant = (resId)=>{
-    const [restaurant, setRestaurant] = (0, _react.useState)(null);
+var _react = require("a4d5eb2dc9234371");
+var _constants = require("f4d597a885d38854");
+const useRestaurantMenu = (resId)=>{
+    const [resInfo, setResInfo] = (0, _react.useState)(null);
     //Get restaurant API
     (0, _react.useEffect)(()=>{
-        getRestaurantInfo();
+        fetchData();
     }, []);
-    async function getRestaurantInfo() {
-        const data = await fetch(_constants.FETCH_MENU_URL + resId);
+    const fetchData = async ()=>{
+        const data = await fetch(_constants.MENU_API + resId);
         const json = await data.json();
-        setRestaurant(json.data);
-    }
+        setResInfo(json.data);
+    };
     //return the restaurant data-state variable
-    return restaurant;
+    return resInfo;
 };
-var _default = useRestaurant;
+var _default = useRestaurantMenu;
 exports.default = _default;
 
-  $parcel$ReactRefreshHelpers$5009.postlude(module);
+  $parcel$ReactRefreshHelpers$253c.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"8fa7a999535c6f86":"21dqq","53890a9a7bacb4e5":"3huJa","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5RXlr":[function(require,module,exports) {
+},{"a4d5eb2dc9234371":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","f4d597a885d38854":"hB8jg"}],"K7XHe":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b1f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b1f7.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _react = require("6e06cfc0bc4c537c");
+var _ItemList = _interopRequireDefault(require("f4f85a72afe07321"));
+var _jsxRuntime = require("b45523002eff650f");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+const RestaurantCategory = ({ data , showItems , setShowIndex , dummy  })=>{
+    const handleClick = ()=>{
+        setShowIndex();
+    };
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            className: "w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "flex justify-between cursor-pointer",
+                    onClick: handleClick,
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("span", {
+                            className: "font-bold text-lg",
+                            children: [
+                                data.title,
+                                " (",
+                                data.itemCards.length,
+                                ")"
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                            children: "⬇️"
+                        })
+                    ]
+                }),
+                showItems && /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ItemList.default, {
+                    items: data.itemCards,
+                    dummy: dummy
+                })
+            ]
+        })
+    });
+};
+_c = RestaurantCategory;
+var _default = RestaurantCategory;
+exports.default = _default;
+var _c;
+$RefreshReg$(_c, "RestaurantCategory");
+
+  $parcel$ReactRefreshHelpers$b1f7.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"6e06cfc0bc4c537c":"21dqq","f4f85a72afe07321":"kZjho","b45523002eff650f":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kZjho":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1342 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1342.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _reactRedux = require("482d17fd055cfae6");
+var _cartSlice = require("fc251fc3cf4c2b34");
+var _constants = require("bd3f9f6653e4055f");
+var _jsxRuntime = require("4cc59787a66a2892");
+const ItemList = ({ items , dummy  })=>{
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleAddItem = (item)=>{
+        // Dispatch an action
+        dispatch((0, _cartSlice.addItem)(item));
+    };
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+        children: items.map((item)=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                "data-testid": "foodItems",
+                className: "p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "w-9/12",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "py-2",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                        children: item.card.info.name
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("span", {
+                                        children: [
+                                            "- ₹",
+                                            item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                className: "text-xs",
+                                children: item.card.info.description
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "w-3/12 p-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                className: "absolute",
+                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "p-2 mx-16 rounded-lg bg-black text-white shadow-lg",
+                                    onClick: ()=>handleAddItem(item),
+                                    children: "Add +"
+                                })
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _constants.CDN_URL + item.card.info.imageId,
+                                className: "w-full"
+                            })
+                        ]
+                    })
+                ]
+            }, item.card.info.id))
+    });
+};
+_c = ItemList;
+var _default = ItemList;
+exports.default = _default;
+var _c;
+$RefreshReg$(_c, "ItemList");
+
+  $parcel$ReactRefreshHelpers$1342.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"482d17fd055cfae6":"bdVon","fc251fc3cf4c2b34":"5RXlr","bd3f9f6653e4055f":"hB8jg","4cc59787a66a2892":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5RXlr":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -35796,11 +35270,11 @@ const cartSlice = (0, _toolkit.createSlice)({
             state.items.push(action.payload);
         },
         //ths will remove items from cart
-        removeItem: (state)=>{
+        removeItem: (state, action)=>{
             state.items.pop();
         },
         //this will clear the cart
-        clearCart: (state)=>{
+        clearCart: (state, action)=>{
             state.items = [];
         }
     }
@@ -39686,61 +39160,14 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h0rtF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b52a.prelude(module);
-
-try {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6A5Ux":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _react = require("10565127c8f83a12");
-var _jsxRuntime = require("7063fd74afe1b7bb");
-const Profile = (props)=>{
-    const [count] = (0, _react.useState)(0);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                children: "Profile Functional Component"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
-                children: [
-                    "Name: ",
-                    props.name
-                ]
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
-                children: [
-                    "Count: ",
-                    count
-                ]
-            })
-        ]
-    });
-};
-_c = Profile;
-var _default = Profile;
-exports.default = _default;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$b52a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","10565127c8f83a12":"21dqq","7063fd74afe1b7bb":"6AEwr"}],"k2jPV":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _toolkit = require("170cf78df57ca83c");
-var _cartSlice = _interopRequireDefault(require("d174a56a8161ceb6"));
+var _toolkit = require("e3f3a0662c891691");
+var _cartSlice = _interopRequireDefault(require("306897ef729a828a"));
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         default: obj
@@ -39754,7 +39181,7 @@ const store = (0, _toolkit.configureStore)({
 var _default = store;
 exports.default = _default;
 
-},{"170cf78df57ca83c":"lL1Ef","d174a56a8161ceb6":"5RXlr"}],"h8J3U":[function(require,module,exports) {
+},{"e3f3a0662c891691":"lL1Ef","306897ef729a828a":"5RXlr"}],"h8J3U":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad24 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39767,7 +39194,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _reactRedux = require("953a168cf69dc027");
-var _FoodItem = _interopRequireDefault(require("e01d09dd57b1c9ae"));
+var _ItemList = _interopRequireDefault(require("1e7534eb7fe51ade"));
 var _cartSlice = require("54803bdb8a8e3d09");
 var _jsxRuntime = require("53d7d96d1928d91");
 function _interopRequireDefault(obj) {
@@ -39783,24 +39210,27 @@ const Cart = ()=>{
         dispatch((0, _cartSlice.clearCart)());
     };
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+        className: "text-center m-4 p-4",
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h1", {
-                className: "font-bold text-3xl",
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                className: "text-2xl font-bold",
+                children: "Cart"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "w-6/12 m-auto",
                 children: [
-                    "Cart Items - ",
-                    cartItems.length
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: " p-2 m-2 bg-black text-white rounded-lg",
+                        onClick: handleClearCart,
+                        children: "Clear Cart"
+                    }),
+                    cartItems?.length === 0 && /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        children: " Cart is empty. Add Items to the cart!"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ItemList.default, {
+                        items: cartItems
+                    })
                 ]
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "bg-green-100 p-2 m-5",
-                onClick: ()=>handleClearCart(),
-                children: "Clear Cart"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "flex",
-                children: cartItems.map((item)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_FoodItem.default, {
-                        ...item
-                    }, item.id))
             })
         ]
     });
@@ -39816,58 +39246,94 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"953a168cf69dc027":"bdVon","e01d09dd57b1c9ae":"9xltm","54803bdb8a8e3d09":"5RXlr","53d7d96d1928d91":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xltm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8f2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"953a168cf69dc027":"bdVon","1e7534eb7fe51ade":"kZjho","54803bdb8a8e3d09":"5RXlr","53d7d96d1928d91":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e2h3k":[function(require,module,exports) {
+module.exports = require("93318cb074357564")(require("3a35a3215e934b73").getBundleURL("aXMci") + "Grocery.c52c2ad2.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("2CCQ0"));
+
+},{"93318cb074357564":"61B45","3a35a3215e934b73":"lgJ39"}],"gB4Fs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8238 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8f2a.prelude(module);
+$parcel$ReactRefreshHelpers$8238.prelude(module);
 
 try {
-var _s = $RefreshSig$();
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = void 0;
-var _constants = require("e89fea8e3f1d7c8f");
-var _jsxRuntime = require("a1608d92ad02ab7f");
-const FoodItem = ({ name , description , cloudinaryImageId , price  })=>{
-    _s();
-    const { user  } = useContext(UserContext);
+var _react = require("137859ca06e8210c");
+var _jsxRuntime = require("9a3f05484352423d");
+//we are passing isVisible and setIsVisible as prop in below section
+const Section = ({ title , description , isVisible , setIsVisible  })=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
+        className: "border border-black p-2 m-2",
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                src: _constants.IMG_CDN_URL + cloudinaryImageId
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                className: "font-bold test-xl",
-                children: name
-            }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                children: description
+                className: "font-bold text-xl",
+                children: title
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
-                children: [
-                    "Rupees: ",
-                    price / 100
-                ]
+            isVisible ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                onClick: ()=>setIsVisible(!isVisible),
+                className: "cursor-pointer underline",
+                children: "Hide"
+            }) : /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                onClick: ()=>setIsVisible(!isVisible),
+                className: "cursor-pointer underline",
+                children: "Show"
+            }),
+            isVisible && /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                children: description
             })
         ]
     });
 };
-_s(FoodItem, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
-_c = FoodItem;
-var _default = FoodItem;
+_c = Section;
+//Now here parent(InstaMart) has the control over 3 children Instamart state
+const Instamart = ()=>{
+    const [visibleSection, setIsVisibleSection] = (0, _react.useState)("about");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                className: "text-3xl p-2 font-bold",
+                children: "InstaMart"
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
+                title: "About InstaMart",
+                description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
+                isVisible: visibleSection === "about" //Now my parent has control over children
+                ,
+                setIsVisible: ()=>setIsVisibleSection("about") //Passing the about key
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
+                title: "Team InstaMart",
+                description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
+                isVisible: visibleSection === "team",
+                setIsVisible: ()=>setIsVisibleSection("team")
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
+                title: "Careers",
+                description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham",
+                isVisible: visibleSection === "career",
+                setIsVisible: ()=>setIsVisibleSection("career")
+            })
+        ]
+    });
+};
+_c1 = Instamart;
+var _default = Instamart;
 exports.default = _default;
-var _c;
-$RefreshReg$(_c, "FoodItem");
+var _c, _c1;
+$RefreshReg$(_c, "Section");
+$RefreshReg$(_c1, "Instamart");
 
-  $parcel$ReactRefreshHelpers$8f2a.postlude(module);
+  $parcel$ReactRefreshHelpers$8238.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"e89fea8e3f1d7c8f":"3huJa","a1608d92ad02ab7f":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","cJcMZ","2kQhy"], "2kQhy", "parcelRequire4df4")
+},{"137859ca06e8210c":"21dqq","9a3f05484352423d":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","cJcMZ","2kQhy"], "2kQhy", "parcelRequire4df4")
 
 //# sourceMappingURL=index.7271efb6.js.map
