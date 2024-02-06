@@ -1,2 +1,2 @@
-# complete-react
-learning react from scratch
+# Food orsdering application
+Build food orderoing application using React, Tailwind and Redux.
