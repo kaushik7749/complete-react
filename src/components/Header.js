@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import Logo from "../assets/img/FoodVilla.png";
+import Logo from "../assets/img/Food.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
@@ -15,7 +15,7 @@ const Title = () => (
 );
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
+  // const [btnNameReact, setBtnNameReact] = useState("Login");
 
   const onlineStatus = useOnlineStatus();
 
@@ -47,7 +47,7 @@ const Header = () => {
           <li className="px-4 font-bold text-xl">
             <Link to="/cart">Cart - ({cartItems.length} items)</Link>
           </li>
-          <button
+          {/* <button
             className="login"
             onClick={() => {
               btnNameReact === "Login"
@@ -56,7 +56,7 @@ const Header = () => {
             }}
           >
             {btnNameReact}
-          </button>
+          </button> */}
 
           <li className="px-4 ">{loggedInUser}</li>
         </ul>

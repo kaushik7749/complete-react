@@ -584,23 +584,23 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$3b38.prelude(module);
 
 try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _jsxRuntime = require("505f6537ee5b9883");
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Grocery = ()=>{
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h1", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: [
             " ",
             "Our grocery online store, and we have a lot of child components inside this web page!!!"
         ]
-    });
+    }, void 0, true, {
+        fileName: "src/components/Grocery.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
 };
 _c = Grocery;
-var _default = Grocery;
-exports.default = _default;
+exports.default = Grocery;
 var _c;
 $RefreshReg$(_c, "Grocery");
 
@@ -609,6 +609,6 @@ $RefreshReg$(_c, "Grocery");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"505f6537ee5b9883":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","2T8U5"], null, "parcelRequire4df4")
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","2T8U5"], null, "parcelRequire4df4")
 
 //# sourceMappingURL=Grocery.c52c2ad2.js.map

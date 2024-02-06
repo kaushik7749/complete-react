@@ -32,10 +32,10 @@ const Body = () => {
     const json = await data.json();
     //optional chaining
     setListOfRestraunt(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     ); //rendering json data
     setFilteredRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(json);
   };
@@ -50,12 +50,13 @@ const Body = () => {
     );
 
   const { loggedInUser, setUserName } = useContext(UserContext);
+  console.log(listOfRestaurants);
 
   //when I don't I have my restaurant don't return anything(Early return)
 
   //if(!allRestaurants.length) return null;
 
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -77,7 +78,7 @@ const Body = () => {
             // searchText
             console.log(searchText);
 
-            const filteredRestaurant = listOfRestaurants.filter((res) =>
+            const filteredRestaurant = listOfRestaurants?.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
 
@@ -92,7 +93,7 @@ const Body = () => {
           className="px-4 py-2 bg-gray-100 rounded-lg"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.avgRating > 4.3
             );
             setFilteredRestaurant(filteredList);
           }}
@@ -109,7 +110,7 @@ const Body = () => {
         />
       </div>
       <div className="flex flex-wrap">
-        {filteredRestaurant.map((restaurant) => {
+        {filteredRestaurant?.map((restaurant) => {
           //I will show in my UI filtered restaurant.
           //Now we are mapping our key component to Link component
           //-So, key which is present in RestaurantCard should be in our Link component.
